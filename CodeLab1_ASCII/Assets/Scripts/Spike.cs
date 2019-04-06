@@ -22,10 +22,10 @@ public class Spike : Enemy
         base.Start(); // calls enemy script start function
         
         nextSpikeTime = Time.timeSinceLevelLoad + activeSpikeTime;
-        upPos = transform.position;
-        downPos = transform.position + downPos;
+        upPos = transform.localPosition;
+        downPos = transform.localPosition + downPos;
         if(!isSpikeUp) // checks if spike should start in down pos
-            transform.position = downPos; // moves spike start position down
+            transform.localPosition = downPos; // moves spike start position down
         spikeCollider = GetComponent<PolygonCollider2D>();
     }
 
@@ -42,12 +42,12 @@ public class Spike : Enemy
         if (isSpikeUp) // move to upPos
         {
             spikeCollider.enabled = true;
-            transform.position = Vector3.Lerp(transform.position, upPos, spikeMoveSpeed * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, upPos, spikeMoveSpeed * Time.deltaTime);
         }
         else // move to downPos
         {
             spikeCollider.enabled = false;
-            transform.position = Vector3.Lerp(transform.position, downPos, spikeMoveSpeed * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, downPos, spikeMoveSpeed * Time.deltaTime);
         }
     }
 }
