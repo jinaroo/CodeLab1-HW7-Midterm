@@ -54,6 +54,9 @@ public class AsciiLevelLoader : MonoBehaviour
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
                         Debug.Log("Spawning player");
                         break;
+                    case 'W':
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/star"));
+                        break;
                     default:
                         tile = null;
                         break;

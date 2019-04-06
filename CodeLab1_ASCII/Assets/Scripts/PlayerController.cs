@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
     public Color deadColor;
+    public Color winColor;
     
     // Start is called before the first frame update
     void Start()
@@ -52,5 +53,11 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         GetComponent<SpriteRenderer>().color = deadColor;
+    }
+
+    public void Win()
+    {
+        canMove = false;
+        GetComponent<SpriteRenderer>().color = winColor;
     }
 }
