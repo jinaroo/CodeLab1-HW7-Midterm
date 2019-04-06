@@ -35,7 +35,7 @@ public class AsciiLevelLoader : MonoBehaviour
                 switch (line[x])
                 {
                     case 'X':
-                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/square"), transform);
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/platform"), transform);
                         break;
                     case 'B':
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/bad_square"), transform);
