@@ -27,7 +27,7 @@ public class Blob : Enemy
     {
         if (dirRight)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, rightEnd, speed * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, rightEnd, speed * Time.deltaTime);
             if (transform.localPosition == rightEnd)
             {
                 dirRight = false;
@@ -35,7 +35,7 @@ public class Blob : Enemy
         }
         else
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, leftEnd, speed * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, leftEnd, speed * Time.deltaTime);
             if (transform.localPosition == leftEnd)
             {
                 dirRight = true;

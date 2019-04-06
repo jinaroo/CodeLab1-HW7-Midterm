@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class Enemy : MonoBehaviour
     public virtual void Start()
     {
         mainCanvas = GameObject.FindWithTag("Canvas");
-        mainCanvas.transform.GetChild(0).gameObject.SetActive(false);
         player = GameObject.FindWithTag("Player");
     }
 
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            mainCanvas.transform.GetChild(0).gameObject.SetActive(true);
+            mainCanvas.transform.GetChild(0).GetComponent<Text>().text = "bleh.";
             player.GetComponent<PlayerController>().Die();
         }
     }
